@@ -10,7 +10,9 @@ export class AppComponent {
 
   constructor() {
     require.ensure([], require => {
+      // this string needs to be dynamic, since I know only at runtime which module I have to load
       let r = './app.component';
+
       let ctx = require(r);
 
       console.log(ctx);
